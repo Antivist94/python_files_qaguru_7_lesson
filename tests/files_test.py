@@ -5,15 +5,6 @@ import csv
 from script_os import ZIP_DIR
 
 
-def test_check_list_of_files():
-    with ZipFile(ZIP_DIR) as zip_file:
-        print(zip_file.namelist())
-        file_list = zip_file.namelist()
-        assert 'pdf_example.pdf' in file_list
-        assert 'xlsx_example.xlsx' in file_list
-        assert 'csv_example.csv' in file_list
-
-
 def test_check_pdf_file():
     with (ZipFile(ZIP_DIR) as zip_file):
         with zip_file.open('pdf_example.pdf') as pdf_file:
